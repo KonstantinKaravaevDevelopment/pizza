@@ -9,7 +9,7 @@ class Dania_Pizzeria(models.Model):
     #PodKategoria = models.ForeignKey('SubCategory', on_delete=models.PROTECT, null=True)
     Nazwa = models.CharField(max_length=50)
     Opis = models.CharField(max_length=150)
-    Zdjecie = models.ImageField(upload_to='images')
+    Zdjecie = models.ImageField(upload_to='images/')
     Cena = models.FloatField(max_length=10)
     Stan = models.BooleanField(default=False)
     Waga = models.FloatField(max_length=10)
