@@ -21,4 +21,4 @@ from pizzeria.views import DaniaAPIViewSet
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/pizza/', DaniaAPIViewSet.as_view({'get': 'list'}) )
-]
+] + static(settings.IMAGES_URL, document_root = settings.IMAGES_ROOT)
