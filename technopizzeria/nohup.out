@@ -1,8 +1,0 @@
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-August 20, 2022 - 16:41:00
-Django version 4.1, using settings 'technopizzeria.settings'
-Starting development server at http://0.0.0.0:8000/
-Quit the server with CONTROL-C.
