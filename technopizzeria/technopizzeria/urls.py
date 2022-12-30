@@ -19,8 +19,17 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from pizzeria.views import DaniaAPIViewSet
+from pizzeria.views import ConfigurationAPIViewSet
+from pizzeria.views import CategoryAPIViewSet
+from pizzeria.views import LanguageAPIViewSet
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/pizza/', DaniaAPIViewSet.as_view({'get': 'list'}) )
+    # V1.0
+    path('api/v1/pizza/', DaniaAPIViewSet.as_view({'get': 'list'})),
+    # V2.0
+    path('api/v2/pizza/configuration/', ConfigurationAPIViewSet.as_view({'get': 'list'})),
+    path('api/v2/pizza/dania/', DaniaAPIViewSet.as_view({'get': 'list'})),
+    path('api/v2/pizza/category/', CategoryAPIViewSet.as_view({'get': 'list'})),
+    path('api/v2/pizza/language/', LanguageAPIViewSet.as_view({'get': 'list'}))
 ] + static(settings.IMAGES_URL, document_root = settings.IMAGES_ROOT)
