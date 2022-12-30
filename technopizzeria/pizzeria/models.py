@@ -34,9 +34,32 @@ class Dania_Pizzeria(models.Model):
     def __str__(self):
         return self.Nazwa_PL
 
+
+class Configuration(models.Model):
+    name = models.CharField(max_length=50, db_index = True)
+    first_image = models.ImageField(upload_to='images/')
+    second_image = models.ImageField(upload_to='images/')
+    icon_na_miejscu = models.ImageField(upload_to='images/')
+    icon_na_wynos = models.ImageField(upload_to='images/')
+    icon_dodatki = models.ImageField(upload_to='images/')
+    icon_karta = models.ImageField(upload_to='images/')
+    icon_blik = models.ImageField(upload_to='images/')
+
+    def __str__(self):
+        return self.name
+
     
 class Category(models.Model):
     name = models.CharField(max_length=50, db_index = True)
+    Kategoria_image = models.ImageField(upload_to='images/', null=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Language(models.Model):
+    name = models.CharField(max_length=50, db_index = True)
+    Jezyk_image = models.ImageField(upload_to='images/', null=True)
 
     def __str__(self):
         return self.name
